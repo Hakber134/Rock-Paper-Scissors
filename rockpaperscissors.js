@@ -30,11 +30,29 @@ function playRound() {
     } else if (result === "lose") {
         console.log("Computer wins!");
     }
+    return result;
 }
 
 function game() {
-    for (let i=0; i<5; i++) {
-        playRound();
+    let playerWins = 0;
+    let computerWins = 0;
+
+    for (let i=0; i < 5 && playerWins < 3 && computerWins < 3; i++) {
+        const result = playRound();
+
+        if (result === "win"){
+            playerWins++;
+        } else if (result === "lose") {
+            computerWins++;
+        }
+    }
+
+    if (playerWins > computerWins) {
+        console.log("Congrats! Player has won the best of 5!");
+    } else if (computerWins > playerWins) {
+        console.log("The computer won the best of 5!");
+    } else {
+        console.log("The best of 5 ended in a tie!");
     }
 }
 
