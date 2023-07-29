@@ -1,8 +1,7 @@
 function getComputerChoice(){
     const choices = ["Rock", "Paper", "Scissors"];
     const randomIndex = Math.floor(Math.random()*choices.length);
-    computerSelection = choices[randomIndex]
-    return computerSelection;
+    return choices[randomIndex]
 }
 
 function getPlayerChoice(){
@@ -16,5 +15,21 @@ function determineWinner(playerSelection, computerSelection){
         paper: {rock: "win", paper: "tie", scissors: "lose"},
         scissors: {rock: "lose", paper: "win", scissors: "tie"}
     };
-    return outcomes[playerSelection, computerSelection];
+    return outcomes[playerSelection.toLowerCase()][computerSelection.toLowerCase()];
 }
+
+function playRound() {
+    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
+    const result = determineWinner(playerSelection, computerSelection);
+    
+    if (result === "win") {
+        console.log("Player wins!");
+    } else if (result === "tie") {
+        console.log("It's a tie! Try again.");
+    } else if (result === "lose") {
+        console.log("Computer wins!");
+    }
+}
+
+playRound();
