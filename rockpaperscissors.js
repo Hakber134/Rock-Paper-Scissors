@@ -37,7 +37,7 @@ function game() {
     let playerWins = 0;
     let computerWins = 0;
 
-    for (let i=0; i < 5 && playerWins < 3 && computerWins < 3; i++) {
+    /*for (let i=0; i < 5 && playerWins < 3 && computerWins < 3; i++) {
         const result = playRound();
 
         if (result === "win"){
@@ -45,7 +45,7 @@ function game() {
         } else if (result === "lose") {
             computerWins++;
         }
-    }
+    }*/
 
     if (playerWins > computerWins) {
         console.log("Congrats! Player has won the best of 5!");
@@ -55,5 +55,20 @@ function game() {
         console.log("The best of 5 ended in a tie!");
     }
 }
+
+const rockButton = document.querySelector('button.rock');
+rockButton.addEventListener('click', () => {
+    playRound('rock');
+});
+
+const paperButton = document.querySelector('button.paper');
+paperButton.addEventListener('click', () => {
+    playRound('paper');
+});
+
+const scissorsButton = document.querySelector('button.scissors');
+scissorsButton.addEventListener('click', () => {
+    playRound('scissors');
+});
 
 game();
