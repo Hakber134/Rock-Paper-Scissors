@@ -4,10 +4,11 @@ function getComputerChoice(){
     return choices[randomIndex]
 }
 
+/* not needed for the UI implementation
 function getPlayerChoice(){
     let playerSelection = prompt("Enter your choice (rock, paper, scissors): ");
     return playerSelection.toLowerCase();
-}
+}*/
 
 function determineWinner(playerSelection, computerSelection){
     let outcomes = {
@@ -18,17 +19,23 @@ function determineWinner(playerSelection, computerSelection){
     return outcomes[playerSelection.toLowerCase()][computerSelection.toLowerCase()];
 }
 
-function playRound() {
-    const playerSelection = getPlayerChoice();
+function playRound(playerSelection) {
     const computerSelection = getComputerChoice();
     const result = determineWinner(playerSelection, computerSelection);
-    
+
+    const playerChoiceDisplay = document.querySelector('#player-choice');
+    playerChoiceDisplay.textContent = `Player's Choice: ${playerSelection}`;
+
+    const computerChoiceDisplay = document.querySelector('#computer-choice');
+    computerChoiceDisplay.textContent = `Computer's Choice: ${computerSelection}`;
+
+    const roundWinnerDisplay = document.querySelector('#round-winner-display');    
     if (result === "win") {
-        console.log("Player wins!");
+        roundWinnerDisplay.textContent = `The player wins`;
     } else if (result === "tie") {
-        console.log("It's a tie! Try again.");
+        roundWinnerDisplay.textContent = `This round ended in a tie.`;
     } else if (result === "lose") {
-        console.log("Computer wins!");
+        roundWinnerDisplay.textContent = `The computer wins`;
     }
     return result;
 }
@@ -37,7 +44,7 @@ function game() {
     let playerWins = 0;
     let computerWins = 0;
 
-    /*for (let i=0; i < 5 && playerWins < 3 && computerWins < 3; i++) {
+    for (let i=0; i < 5 && playerWins < 3 && computerWins < 3; i++) {
         const result = playRound();
 
         if (result === "win"){
@@ -45,7 +52,7 @@ function game() {
         } else if (result === "lose") {
             computerWins++;
         }
-    }*/
+    }
 
     if (playerWins > computerWins) {
         console.log("Congrats! Player has won the best of 5!");
@@ -56,19 +63,20 @@ function game() {
     }
 }
 
-const rockButton = document.querySelector('button.rock');
+
+
+const rockButton = document.querySelector('#Rock');
 rockButton.addEventListener('click', () => {
-    playRound('rock');
+    playRound('Rock');
 });
 
-const paperButton = document.querySelector('button.paper');
+const paperButton = document.querySelector('#Paper');
 paperButton.addEventListener('click', () => {
-    playRound('paper');
+    playRound('Paper');
 });
 
-const scissorsButton = document.querySelector('button.scissors');
+const scissorsButton = document.querySelector('#Scissors');
 scissorsButton.addEventListener('click', () => {
-    playRound('scissors');
+    playRound('Scissors');
 });
 
-game();
