@@ -51,10 +51,11 @@ function playRound(playerSelection) {
 
 
 function announceWinner() {
+    const matchWinnerDisplay = document.querySelector('#match-winner-display');    
     if (playerWins === 5) {
-        console.log("Player wins the match!");
+        matchWinnerDisplay.textContent = `PLAYER WON THE MATCH!`;
     } else if (computerWins === 5) {
-        console.log("Computer wins the match!");
+        matchWinnerDisplay.textContent = `COMPUTER WON THE MATCH!`;
     }
 }
 
@@ -86,3 +87,19 @@ scissorsButton.addEventListener('click', () => {
 const playerWinsDisplay = document.querySelector('#player-wins');
 
 const computerWinsDisplay = document.querySelector('#computer-wins');
+
+const resetButton = document.querySelector("#Reset")    
+resetButton.addEventListener('click', ()=>{
+    playerWins = 0;
+    computerWins = 0;
+
+    playerWinsDisplay.textContent = playerWins;
+    computerWinsDisplay.textContent = computerWins;
+
+    const matchWinnerDisplay = document.querySelector('#match-winner-display');
+    matchWinnerDisplay.textContent = '';
+
+    rockButton.removeAttribute('disabled');
+    paperButton.removeAttribute('disabled');
+    scissorsButton.removeAttribute('disabled');
+});
