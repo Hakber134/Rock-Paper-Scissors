@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Rock Paper Scissors</title>
-</head>
-<body>
-    <button id="Rock">Rock</button>
-    <button id="Paper">Paper</button>
-    <button id="Scissors">Scissors</button>
+  </head>
+  <body>
+    <div id="gradientBackground">
+      <div id="centerContainer">
+        <div id="buttonContainer">
+            <button id="Rock"><img src="./icons/rock.png" alt="Rock Image"></button>
+            <button id="Paper"><img src="./icons/paper.png" alt="Paper Image"></button>
+            <button id="Scissors"><img src="./icons/scissors.png" alt="Scissors Image"></button>
+        </div>
 
-    <div id="player-choice">Player's Choice: </div>
-    <div id="computer-choice">Computer's Choice: </div>
+      <div id="choiceContainer">
+        <div id="player-choice">Player's Choice:</div>
+        <div id="computer-choice">Computer's Choice:</div>
+      </div>
 
-    <div id="round-winner-display">The round winner is </div>
+      <div id="round-winner-display">The round winner is</div>
 
-    <p>Player Wins: <span id="player-wins">0</span></p>
-    <p>Computer Wins: <span id="computer-wins">0</span></p>
+      <div id="winsContainer">
+        <p>Player Wins: <span id="player-wins">0</span></p>
+        <p>Computer Wins: <span id="computer-wins">0</span></p>
+      </div>
 
-    <div id="match-winner-display"> </div>
+      <div id="match-winner-display"></div>
 
-    <button id="Reset">Reset</button>
+      <button id="Reset">Reset</button>
+    </div>
 
     <script src="rockpaperscissors.js"></script>
-</body>
+  </body>
 </html>
