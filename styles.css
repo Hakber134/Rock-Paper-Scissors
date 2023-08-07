@@ -59,7 +59,7 @@ button:active{
 }
 
 .buttonContainer {
-    display: flex;
+    display: inline-block;
     justify-content: space-around;
 }
 
@@ -68,13 +68,60 @@ button:active{
 }
 
 #player-choice {
-    padding-left: 300px;
-    padding-right: 300px;
+    padding-right: 250px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     font-family: chewy;
+    color: purple;
 }
 
 #computer-choice {
-    padding-left: 300px;
-    padding-right: 300px;
+    padding-left: 250px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     font-family: chewy;
+    color: orange;
+}
+
+#winsContainer {
+    display: flex
+}
+
+#player-wins {
+    padding-right: 250px;
+    padding-top: 40px;
+    padding-bottom:40px;
+    font-family: chewy;
+    color: purple;
+}
+
+#computer-wins {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-family: chewy;
+    color: orange;
+}
+
+#pwins {
+    font-family: chewy;
+    color: purple;
+}
+
+#cwins {
+    font-family: chewy;
+    color: orange;
+}
+
+#round-winner-display {
+    font-family: chewy;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#match-winner-display {
+    font-family: chewy;
+    padding-bottom: 40px;
+    font-weight: bolder;
+    font-size: xx-large;
+    color: chartreuse;
 }
