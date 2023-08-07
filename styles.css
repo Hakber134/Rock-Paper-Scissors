@@ -3,17 +3,34 @@
     src: url(./fonts/Chewy-Regular.ttf);
 }
 
+@font-face {
+    font-family: arcade;
+    src: url(./fonts/ARCADECLASSIC.TTF);
+}
+
+.title {
+    text-align: center;
+    font-size: 60px;
+    font-family: arcade;
+    color: pink;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 20px;
+    font-family: chewy;
+    color: pink;
+}
+
 body {
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,115,121,1) 46%, rgba(0,212,255,1) 100%);
     margin: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
 #gradientBackground {
-    background: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
